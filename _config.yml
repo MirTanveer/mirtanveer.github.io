@@ -1,0 +1,35 @@
+# Basic Site Configuration
+title: "Mir Tanveerul Hassan, Ph.D."
+description: "Researcher in Machine Learning, Bioinformatics, and Therapeutic Peptide Prediction"
+baseurl: "" # Leave empty for GitHub Pages
+url: "http://example.example.org" # Your website URL
+
+# Author Details
+author:
+  name: "Mir Tanveerul Hassan, Ph.D."
+  email: "mirtanveer@jbnu.ac.kr"
+  linkedin: "http://www.linkedin.com/in/example/"
+  github: "http://example.example.org/"
+
+# Social Links (optional, add as needed)
+social:
+  email: "mirtanveer@jbnu.ac.kr"
+  linkedin: "http://www.linkedin.com/in/example/"
+  google_scholar: "http://scholar.google.com/yourprofile"
+  twitter: "http://twitter.com/yourprofile"
+
+# Navigation Links
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about/"
+  - title: "Research"
+    url: "/research/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "Publications"
+    url: "/publications/"
+
+# Theme and Plugins
+theme: jekyll-theme-cayman # Change this based on your preferred theme
