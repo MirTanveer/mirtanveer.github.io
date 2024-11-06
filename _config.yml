@@ -2,13 +2,13 @@
 title: "Mir Tanveerul Hassan, Ph.D."
 description: "Researcher in Machine Learning, Bioinformatics, and Therapeutic Peptide Prediction"
 baseurl: "" # Leave empty for GitHub Pages
-url: "http://example.example.org" # Your website URL
+url: "mirtanveer.github.io" # Your website URL
 
 # Author Details
 author:
   name: "Mir Tanveerul Hassan, Ph.D."
   email: "mirtanveer@jbnu.ac.kr"
-  linkedin: "http://www.linkedin.com/in/example/"
+  linkedin: "http://www.linkedin.com/in/"
   github: "http://example.example.org/"
 
 # Social Links (optional, add as needed)
