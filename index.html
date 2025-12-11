@@ -58,23 +58,44 @@
 		</style>
 
 
-		
 		<!-- put this AFTER: <link href="css/styles.css" rel="stylesheet" /> -->
 		<style id="spacing-override">
-		/* Add spacing between Education and Publications */
-		#education {
-		    margin-bottom: 4rem !important;
+
+		/* ---------- Add space around Education & between entries ---------- */
+		
+		/* 1) Space after the whole Education section (before hr) */
+		section#education {
+		  margin-bottom: 3.2rem !important;    /* space after Education section */
+		  padding-bottom: 1.2rem !important;   /* extra internal bottom padding */
 		}
 		
-		/* Your existing overrides below… */
-		section.resume-section {
-		    display: block !important;
-		    padding-top: 2.2rem !important;
-		    padding-bottom: 2.2rem !important;
-		    margin-top: 1.2rem !important;
-		    margin-bottom: 1.2rem !important;
-		    min-height: auto !important;
+		/* 2) Make the <hr class="m-0"> breathe (it removes margin by default) */
+		hr.m-0 {
+		  margin-top: 1.8rem !important;
+		  margin-bottom: 1.8rem !important;
 		}
+		
+		/* 3) Space between each university entry inside Education */
+		/* Target the flex rows that have mb-5 (Bootstrap gives mb-5 large margin) */
+		#education .d-flex.mb-5,
+		#education .d-flex.justify-content-between.mb-5,
+		#education .d-flex.flex-column.mb-5 {
+		  margin-bottom: 1.6rem !important; /* reduce or increase as needed */
+		}
+		
+		/* If there are any .mb-5 elements inside #education that still add too much space, force a consistent value for them */
+		#education .mb-5 { margin-bottom: 1.6rem !important; }
+		
+		/* Optional: if inline style margin-left: 17mm misaligns spacing, reduce it */
+		#education [style*="margin-left: 17mm"] {
+		  margin-left: 12px !important;
+		}
+		
+		/* Optional small tweak: make university rows use gap instead of float pushing */
+		#education .d-flex.flex-column.flex-md-row > .flex-grow-1 {
+		  overflow: visible; /* ensure content not clipped */
+		}
+
 		
 		/* About hero spacing */
 		section#about,
