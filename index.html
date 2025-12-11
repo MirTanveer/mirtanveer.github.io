@@ -18,55 +18,36 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+		
 		<!-- put this AFTER: <link href="css/styles.css" rel="stylesheet" /> -->
-		
-		<style id="spacing-override-all">
-		/* ===== Strong override for ALL resume sections (except hero #about) ===== */
-		
-		/* extremely specific selectors to beat theme rules */
-		html body#page-top section.resume-section,
-		html body section.resume-section,
+		<style id="spacing-override">
+		/* Guaranteed override for section spacing */
 		section.resume-section {
 		  display: block !important;
-		  align-items: flex-start !important;
-		  padding-top: 2.2rem !important;    /* top spacing for regular sections */
-		  padding-bottom: 2.2rem !important; /* bottom spacing for regular sections */
-		  margin-top: 1.2rem !important;
+		  padding-top: 2.2rem !important;    /* change this for overall section top spacing */
+		  padding-bottom: 2.2rem !important; /* change this for overall section bottom spacing */
+		  margin-top: 1.2rem !important;     /* gap between sections */
 		  margin-bottom: 1.2rem !important;
-		  min-height: auto !important;       /* remove forced 100vh behavior */
+		  min-height: auto !important;       /* removes 100vh forcing */
 		}
 		
-		/* slightly larger on wider screens for readability */
-		@media (min-width: 768px) {
-		  html body#page-top section.resume-section,
-		  section.resume-section {
-		    padding-top: 2.6rem !important;
-		    padding-bottom: 2.6rem !important;
-		    min-height: auto !important;
-		  }
-		}
-		
-		/* Keep About/first section taller and centered as hero */
+		/* Larger breathing for the About/hero block */
 		section#about,
 		section.resume-section:first-of-type {
 		  display: flex !important;
 		  align-items: center !important;
-		  padding-top: 4rem !important;      /* hero top spacing */
-		  padding-bottom: 3rem !important;   /* hero bottom spacing */
+		  padding-top: 4rem !important;      /* more space above About */
+		  padding-bottom: 3rem !important;   /* and below About */
 		  min-height: 50vh !important;
 		}
 		
-		/* Make sure headings have a gap from the hr */
+		/* Extra: rule to ensure headings have space from hr */
 		section.resume-section h2 {
 		  margin-top: 2rem !important;
 		  margin-bottom: 1rem !important;
 		}
-		
-		/* If the theme uses container-level min-height or flex parents, neutralize them */
-		.container, .container-fluid {
-		  min-height: auto !important;
-		}
 		</style>
+
 
 
 		
