@@ -10944,53 +10944,59 @@ p.lead {
   font-size: 3rem;
 }
 
-section.resume-section {
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  max-width: 75rem;
-}
-section.resume-section .resume-section-content {
-  width: 100%;
-}
 
-@media (min-width: 768px) {
-  section.resume-section {
-    min-height: 100vh;
-  }
-}
-@media (min-width: 992px) {
-  section.resume-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-}
 
-/* FORCE tighter vertical spacing for resume site - put at end of css/styles.css */
 
-/* 1) Very specific selectors + !important to override theme */
+/* ---------- Override: make sections compact (PUT THIS AT THE END OF css/styles.css) ---------- */
+
+/* Stop sections from being full-viewport and vertically centered */
 body#page-top section.resume-section,
-body#page-top .resume-section {
-  padding-top: 6px !important;
-  padding-bottom: 6px !important;
+section.resume-section {
+  /* allow original layout (not vertically centered) */
+  display: block !important;
+  align-items: flex-start !important; /* in case some rule re-applies flex */
+  /* small, tight paddings */
+  padding-top: 0.6rem !important;   /* ~9.6px */
+  padding-bottom: 0.6rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  max-width: 75rem; /* keep your original constraint */
+  min-height: auto !important; /* override 100vh */
 }
 
-/* 2) Remove inner content gaps */
-.resume-section .resume-section-content,
-.resume-section > .container,
-.resume-section > .container-fluid {
+/* If some viewport-specific rules reapply, explicitly override them too */
+@media (min-width: 768px) {
+  body#page-top section.resume-section,
+  section.resume-section {
+    display: block !important;
+    align-items: flex-start !important;
+    padding-top: 0.8rem !important;  /* slightly larger on desktop */
+    padding-bottom: 0.8rem !important;
+    min-height: auto !important;
+  }
+}
+
+@media (min-width: 992px) {
+  body#page-top section.resume-section,
+  section.resume-section {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    min-height: auto !important;
+  }
+}
+
+/* Tighten the content wrapper inside each section */
+section.resume-section .resume-section-content {
+  width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* 3) Tighten headings & paragraphs inside sections */
+/* Reduce vertical rhythm of headings & paragraphs inside sections */
 section.resume-section h1,
 section.resume-section h2,
 section.resume-section h3,
@@ -10998,43 +11004,29 @@ section.resume-section p,
 section.resume-section .subheading {
   margin-top: 0.08rem !important;
   margin-bottom: 0.18rem !important;
-  line-height: 1.12 !important;
+  line-height: 1.18 !important;
+  padding: 0 !important;
 }
 
-/* 4) Make HRs almost flush */
-hr.m-0,
-section.resume-section + hr,
-hr {
+/* Make HRs nearly flush */
+hr.m-0, hr {
   margin-top: 4px !important;
   margin-bottom: 4px !important;
   border-top-width: 1px !important;
 }
 
-/* 5) Projects/cards: reduce gaps and paddings */
-.projects-grid { gap: 8px !important; }
-.project-card { padding: 8px !important; margin-bottom: 6px !important; }
+/* Projects grid/cards: smaller gap */
+.projects-grid { gap: 10px !important; }
+.project-card { padding: 10px !important; margin-bottom: 6px !important; }
 
-/* 6) Lists and publication blocks */
-.resume-section ul,
-.resume-section ol,
-.publication-list,
-.publication-item {
-  margin-top: 0.12rem !important;
-  margin-bottom: 0.12rem !important;
-  padding-left: 1rem !important;
+/* Short-circuit inline `margin-left: 17mm` used across file */
+[style*="margin-left: 17mm"] {
+  margin-left: 8px !important;
 }
 
-/* 7) Force container vertical padding low if theme adds it */
-.container {
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
-}
-
-/* 8) If inline margins create visual "separation", reduce them here */
-[style*="margin-left: 17mm"] { margin-left: 8px !important; }
-
-/* Responsive */
+/* Mobile: keep readable but compact */
 @media (max-width: 768px) {
-  body#page-top section.resume-section { padding-top: 8px !important; padding-bottom: 8px !important; }
+  section.resume-section { padding-top: 0.6rem !important; padding-bottom: 0.6rem !important; }
   .project-card { width: 100% !important; padding: 8px !important; }
 }
+
