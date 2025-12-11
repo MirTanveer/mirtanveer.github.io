@@ -11030,3 +11030,93 @@ hr.m-0, hr {
   .project-card { width: 100% !important; padding: 8px !important; }
 }
 
+/* ---- Balanced spacing: moderate breathing room between sections ----
+   Paste this at the END of css/styles.css to replace the "too-close" overrides.
+*/
+
+body#page-top section.resume-section,
+section.resume-section {
+  display: block !important;
+  align-items: flex-start !important;
+  padding-top: 1.2rem !important;     /* ~19px - comfortable top padding */
+  padding-bottom: 1.2rem !important;  /* ~19px - comfortable bottom padding */
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  min-height: auto !important;
+}
+
+/* Slightly more space on wider screens */
+@media (min-width: 768px) {
+  body#page-top section.resume-section,
+  section.resume-section {
+    padding-top: 1.6rem !important;    /* ~25px on tablet/desktop */
+    padding-bottom: 1.6rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  body#page-top section.resume-section,
+  section.resume-section {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    padding-top: 2rem !important;     /* ~32px on large screens */
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Keep the hero/about section taller and centered (optional — looks nicer) */
+section.resume-section#about,
+section.resume-section:first-of-type {
+  display: flex !important;
+  align-items: center !important;
+  padding-top: 3.5rem !important;    /* hero top spacing */
+  padding-bottom: 3.5rem !important; /* hero bottom spacing */
+  min-height: 60vh !important;        /* keep hero visually prominent */
+}
+
+/* Restore comfortable spacing inside content wrapper */
+section.resume-section .resume-section-content {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Headings & paragraphs: slightly more breathing room */
+section.resume-section h1,
+section.resume-section h2,
+section.resume-section h3,
+section.resume-section p,
+section.resume-section .subheading {
+  margin-top: 0.18rem !important;
+  margin-bottom: 0.4rem !important;
+  line-height: 1.25 !important;
+  padding: 0 !important;
+}
+
+/* Make HRs a touch more visible as separators */
+hr.m-0, hr {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  border-top-width: 1px !important;
+  opacity: 0.6;
+}
+
+/* Projects grid/cards: a bit more gap for readability */
+.projects-grid { gap: 16px !important; }
+.project-card { padding: 14px !important; margin-bottom: 10px !important; }
+
+/* Tackle inline 'margin-left: 17mm' used across file */
+[style*="margin-left: 17mm"] {
+  margin-left: 8px !important;
+}
+
+/* Mobile: keep compact but readable */
+@media (max-width: 768px) {
+  section.resume-section { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+  section.resume-section#about,
+  section.resume-section:first-of-type { padding-top: 2rem !important; padding-bottom: 2rem !important; min-height: auto !important; }
+  .project-card { width: 100% !important; padding: 10px !important; }
+}
+
