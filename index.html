@@ -22,42 +22,35 @@
 		<!-- put this AFTER: <link href="css/styles.css" rel="stylesheet" /> -->
 		<style id="spacing-override">
 		/* Guaranteed override for section spacing */
-		/* Regular section spacing */
-		section.resume-section {
-		  padding-top: 2rem !important;
-		  padding-bottom: 2rem !important;
-		  margin-top: 1rem !important;
-		  margin-bottom: 1rem !important;
-		  min-height: auto !important;
-		}
-		
-		/* Hero (About) section */
-		section#about,
-		section.resume-section:first-of-type {
-		  display: flex !important;
-		  align-items: center !important;
-		  padding-top: 10rem !important;
-		  padding-bottom: 5rem !important;
-		  min-height: 40vh !important;
-		}
-		
-		/* EDUCATION custom spacing */
-		#education {
-		  padding-top: 4rem !important;      /* adjust here */
-		  padding-bottom: 2rem !important;
-		}
-		
-		/* FIX Bootstrap mb-5 internal spacing problem */
-		#education .mb-5 {
-		  margin-bottom: 1rem !important;    /* originally 3rem */
-		  margin-top: 1rem !important;
-		}
-		
-		/* Headings spacing */
-		section.resume-section h2 {
-		  margin-top: 1.5rem !important;
-		  margin-bottom: 1rem !important;
-		}
+		<style id="spacing-override">
+
+/* Add spacing between Education and Publications */
+#education {
+    margin-bottom: 4rem !important;
+}
+
+/* Your existing overrides below… */
+section.resume-section {
+    display: block !important;
+    padding-top: 2.2rem !important;
+    padding-bottom: 2.2rem !important;
+    margin-top: 1.2rem !important;
+    margin-bottom: 1.2rem !important;
+    min-height: auto !important;
+}
+
+/* About hero spacing */
+section#about,
+section.resume-section:first-of-type {
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 10rem !important;
+    padding-bottom: 5rem !important;
+    min-height: 40vh !important;
+}
+
+</style>
+
 
 		</style>
     </head>
