@@ -1033,34 +1033,70 @@ section.resume-section {
         <script src="js/scripts.js"></script>
 
 		<script>
-  // Force smaller spacing at runtime (override any CSS that loads later)
-  (function(){
+/* FORCE-TIGHTEN: set inline styles with "important" so nothing else can override them.
+   Paste this just BEFORE </body> in index.html and save/deploy. */
+(function(){
+  function tighten() {
     const secs = document.querySelectorAll('section.resume-section, .resume-section');
-    secs.forEach(s => {
-      s.style.paddingTop = '6px';
-      s.style.paddingBottom = '6px';
-      s.style.marginTop = '0';
-      s.style.marginBottom = '0';
+    secs.forEach(s=>{
+      s.style.setProperty('padding-top','6px','important');
+      s.style.setProperty('padding-bottom','6px','important');
+      s.style.setProperty('margin-top','0','important');
+      s.style.setProperty('margin-bottom','0','important');
     });
 
-    // also tighten headings inside those sections
-    secs.forEach(s => {
-      const inner = s.querySelectorAll('h1,h2,h3,p,.subheading');
-      inner.forEach(el => {
-        el.style.marginTop = '0';
-        el.style.marginBottom = '0.18rem';
-        el.style.lineHeight = '1.12';
+    // headings & paragraphs inside sections
+    const innerSel = 'h1,h2,h3,p,.subheading';
+    secs.forEach(s=>{
+      s.querySelectorAll(innerSel).forEach(el=>{
+        el.style.setProperty('margin-top','0','important');
+        el.style.setProperty('margin-bottom','0.18rem','important');
+        el.style.setProperty('line-height','1.12','important');
+        el.style.setProperty('padding','0','important');
       });
     });
 
-    // small delay re-run in case theme modifies DOM after load
-    setTimeout(()=>{ 
-      document.querySelectorAll('section.resume-section, .resume-section').forEach(s=>{
-        s.style.paddingTop = '6px';
-        s.style.paddingBottom = '6px';
+    // hr and container adjustments
+    document.querySelectorAll('hr.m-0, hr').forEach(hr=>{
+      hr.style.setProperty('margin-top','4px','important');
+      hr.style.setProperty('margin-bottom','4px','important');
+      hr.style.setProperty('border-top-width','1px','important');
+    });
+    document.querySelectorAll('.container').forEach(c=>{
+      c.style.setProperty('padding-top','4px','important');
+      c.style.setProperty('padding-bottom','4px','important');
+    });
+
+    // tackle inline "margin-left: 17mm" cases by reducing them
+    document.querySelectorAll('[style*="margin-left"]').forEach(el=>{
+      const s = el.getAttribute('style') || '';
+      if (s.includes('17mm')) {
+        el.style.setProperty('margin-left','8px','important');
+      }
+    });
+
+    return secs.length;
+  }
+
+  // Run now, and again after short delay (in case theme mutates DOM)
+  const applied = tighten();
+  setTimeout(tighten, 350);
+  setTimeout(tighten, 1000);
+
+  // Log verification for you
+  setTimeout(()=> {
+    const secs = document.querySelectorAll('section.resume-section, .resume-section');
+    console.log('[FORCE-TIGHTEN] sections found:', secs.length);
+    if (secs.length) {
+      secs.forEach((s,i)=>{
+        const cs = getComputedStyle(s);
+        console.log(`[section ${i}] padding-top: ${cs.paddingTop}, padding-bottom: ${cs.paddingBottom}, margin-top: ${cs.marginTop}, margin-bottom: ${cs.marginBottom}`);
       });
-    }, 600);
-  })();
+    } else {
+      console.warn('[FORCE-TIGHTEN] no section.resume-section found — selector mismatch?');
+    }
+  }, 1200);
+})();
 </script>
 
 
