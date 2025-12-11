@@ -10943,15 +10943,11 @@ p.lead {
 .dev-icons {
   font-size: 3rem;
 }
-/* Change font for Name and Address */
+/* Do NOT change capitalization for About section */
 #about h1,
-#about .subheading {
-    font-family: "Georgia", serif !important;  /* ← change to any font */
-    letter-spacing: 0.5px;
+#about .subheading,
+#about p {
+    text-transform: none !important;
 }
-/* Make Name and Address Title Case */
-#about h1,
-#about .subheading {
-    text-transform: capitalize !important;
-}
+
 
