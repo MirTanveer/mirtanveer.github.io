@@ -11120,3 +11120,7 @@ hr.m-0, hr {
   .project-card { width: 100% !important; padding: 10px !important; }
 }
 
+/* Add comfortable spacing above all section headers */
+section.resume-section h2 {
+  margin-top: 2.5rem !important;   /* Increase this value if you want more */
+}
