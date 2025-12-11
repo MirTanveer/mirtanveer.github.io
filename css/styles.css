@@ -10943,3 +10943,10 @@ p.lead {
 .dev-icons {
   font-size: 3rem;
 }
+/* Change font for Name and Address */
+#about h1,
+#about .subheading {
+    font-family: "Georgia", serif !important;  /* ← change to any font */
+    letter-spacing: 0.5px;
+}
+
