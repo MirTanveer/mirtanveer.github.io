@@ -18,6 +18,34 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+		<!-- put this AFTER: <link href="css/styles.css" rel="stylesheet" /> -->
+			<style id="spacing-override">
+			/* Guaranteed override for section spacing */
+			section.resume-section {
+			  display: block !important;
+			  padding-top: 2.2rem !important;    /* change this for overall section top spacing */
+			  padding-bottom: 2.2rem !important; /* change this for overall section bottom spacing */
+			  margin-top: 1.2rem !important;     /* gap between sections */
+			  margin-bottom: 1.2rem !important;
+			  min-height: auto !important;       /* removes 100vh forcing */
+			}
+			
+			/* Larger breathing for the About/hero block */
+			section#about,
+			section.resume-section:first-of-type {
+			  display: flex !important;
+			  align-items: center !important;
+			  padding-top: 4rem !important;      /* more space above About */
+			  padding-bottom: 3rem !important;   /* and below About */
+			  min-height: 50vh !important;
+			}
+			
+			/* Extra: rule to ensure headings have space from hr */
+			section.resume-section h2 {
+			  margin-top: 2rem !important;
+			  margin-bottom: 1rem !important;
+			}
+			</style>
     </head>
 
 	
