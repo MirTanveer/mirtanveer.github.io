@@ -10952,15 +10952,15 @@ p.lead {
 
 /* ===== Reduce space between sections ===== */
 section.resume-section {
-    padding-top: 2rem !important;     /* top spacing */
-    padding-bottom: 2rem !important;  /* bottom spacing */
+    padding-top: 5rem !important;     /* top spacing */
+    padding-bottom: 5rem !important;  /* bottom spacing */
     min-height: auto !important;      /* remove forced tall sections */
-    margin-top: 1.5rem !important;    /* extra spacing between sections */
+    margin-top: 5rem !important;    /* extra spacing between sections */
 }
 
 /* ===== Add more top space only for ABOUT section ===== */
 section#about {
-    padding-top: 4rem !important;     /* move About text down */
-    padding-bottom: 3rem !important;
+    padding-top: 5rem !important;     /* move About text down */
+    padding-bottom: 5rem !important;
 }
 
