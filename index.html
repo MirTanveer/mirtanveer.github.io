@@ -1031,5 +1031,39 @@ section.resume-section {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+		<script>
+  // Force smaller spacing at runtime (override any CSS that loads later)
+  (function(){
+    const secs = document.querySelectorAll('section.resume-section, .resume-section');
+    secs.forEach(s => {
+      s.style.paddingTop = '6px';
+      s.style.paddingBottom = '6px';
+      s.style.marginTop = '0';
+      s.style.marginBottom = '0';
+    });
+
+    // also tighten headings inside those sections
+    secs.forEach(s => {
+      const inner = s.querySelectorAll('h1,h2,h3,p,.subheading');
+      inner.forEach(el => {
+        el.style.marginTop = '0';
+        el.style.marginBottom = '0.18rem';
+        el.style.lineHeight = '1.12';
+      });
+    });
+
+    // small delay re-run in case theme modifies DOM after load
+    setTimeout(()=>{ 
+      document.querySelectorAll('section.resume-section, .resume-section').forEach(s=>{
+        s.style.paddingTop = '6px';
+        s.style.paddingBottom = '6px';
+      });
+    }, 600);
+  })();
+</script>
+
+
+		
     </body>
 </html>
