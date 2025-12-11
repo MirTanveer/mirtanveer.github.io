@@ -18,6 +18,46 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+				<style id="font-override">
+		
+		/* ================================
+		   1) Set Times New Roman WEBSITE-WIDE
+		   ================================ */
+		body, html, p, div, span, a, li, ul, h1, h2, h3, h4, h5, h6 {
+		    font-family: "Times New Roman", Times, serif !important;
+		}
+		
+		/* ================================
+		   2) Heading size adjustments
+		   ================================ */
+		
+		/* Your name in ABOUT section */
+		#about h1 {
+		    font-size: 36px !important;   /* reduce from huge size */
+		    font-weight: bold !important;
+		}
+		
+		/* All h2 headings (Education, Publications, Projects, Skills, Awards…) */
+		section.resume-section h2 {
+		    font-size: 28px !important;   /* smaller & consistent */
+		    font-weight: bold !important;
+		    margin-bottom: 1rem !important;
+		}
+		
+		/* Optional: reduce h3 inside Education & Publications */
+		section.resume-section h3 {
+		    font-size: 20px !important;
+		}
+		
+		/* Optional: reduce subheadings like “Ph.D.”, “M.Tech”, “B.Tech” */
+		section.resume-section .subheading {
+		    font-size: 18px !important;
+		}
+		
+		</style>
+
+
 		
 		<!-- put this AFTER: <link href="css/styles.css" rel="stylesheet" /> -->
 		<style id="spacing-override">
