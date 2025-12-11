@@ -10958,8 +10958,8 @@ section.resume-section {
   /* small, tight paddings */
   padding-top: 0.6rem !important;   /* ~9.6px */
   padding-bottom: 0.6rem !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   max-width: 75rem; /* keep your original constraint */
