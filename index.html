@@ -5,6 +5,67 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+		<!-- ADD THIS in the FIRST <head> of index.html -->
+		<style id="site-override">
+		/* Balanced spacing override (inserted in the first head for guaranteed precedence) */
+		body#page-top section.resume-section,
+		section.resume-section {
+		  display: block !important;
+		  align-items: flex-start !important;
+		  padding-top: 1.2rem !important;
+		  padding-bottom: 1.2rem !important;
+		  padding-left: 1rem !important;
+		  padding-right: 1rem !important;
+		  margin-top: 0 !important;
+		  margin-bottom: 0 !important;
+		  min-height: auto !important;
+		}
+		
+		@media (min-width: 768px) {
+		  section.resume-section {
+			padding-top: 1.6rem !important;
+			padding-bottom: 1.6rem !important;
+		  }
+		}
+		@media (min-width: 992px) {
+		  section.resume-section {
+			padding-left: 2rem !important;
+			padding-right: 2rem !important;
+			padding-top: 2rem !important;
+			padding-bottom: 2rem !important;
+		  }
+		}
+		
+		/* Keep first/hero section a bit taller */
+		section.resume-section#about,
+		section.resume-section:first-of-type {
+		  display: flex !important;
+		  align-items: center !important;
+		  padding-top: 3.0rem !important;
+		  padding-bottom: 3.0rem !important;
+		  min-height: 50vh !important;
+		}
+		
+		/* inner wrapper */
+		section.resume-section .resume-section-content {
+		  margin: 0 !important;
+		  padding: 0 !important;
+		}
+		
+		/* headings & paragraphs */
+		section.resume-section h1,
+		section.resume-section h2,
+		section.resume-section h3,
+		section.resume-section p,
+		section.resume-section .subheading {
+		  margin-top: 0.18rem !important;
+		  margin-bottom: 0.4rem !important;
+		  line-height: 1.25 !important;
+		}
+		
+		/* weaken any 'margin-left: 17mm' inline usages */
+		[style*="margin-left: 17mm"] { margin-left: 8px !important; }
+		</style>
         <title>Resume - Start Bootstrap Theme</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
