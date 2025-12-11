@@ -10949,4 +10949,9 @@ p.lead {
     font-family: "Georgia", serif !important;  /* ← change to any font */
     letter-spacing: 0.5px;
 }
+/* Make Name and Address Title Case */
+#about h1,
+#about .subheading {
+    text-transform: capitalize !important;
+}
 
