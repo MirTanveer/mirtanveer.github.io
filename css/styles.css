@@ -11123,4 +11123,16 @@ hr.m-0, hr {
 /* Add comfortable spacing above all section headers */
 section.resume-section h2 {
   margin-top: 2.5rem !important;   /* Increase this value if you want more */
+
+
+  /* 1. Increase spacing above Education heading */
+section#education h2 {
+  margin-top: 2.5rem !important;
+}
+
+/* 2. Increase top & bottom spacing for About section */
+section#about {
+  padding-top: 4rem !important;
+  padding-bottom: 3rem !important;
+}
 }
