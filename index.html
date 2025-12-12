@@ -56,39 +56,38 @@
 		}
 
 
-		/* Force rectangular image (override Bootstrap rounded-circle) */
+		/* ===== Bigger circular profile picture in the sidebar ===== */
+		/* Base size for desktop / large screens */
 		#sideNav .img-profile {
-		  border-radius: 4px !important;    /* removes circle */
-		  width: 180px !important;          /* adjust size */
-		  height: 240px !important;         /* taller rectangular frame */
-		  object-fit: cover !important;
+		  width: 160px !important;        /* change this to desired size */
+		  height: 160px !important;       /* keep width==height for a perfect circle */
+		  object-fit: cover !important;   /* crop to fill the frame without distortion */
+		  border-radius: 50% !important;  /* keep circular */
 		  display: block !important;
-		  margin: 0 auto !important;
-		  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 		}
 		
-		/* Extremely specific override to defeat Bootstrap's rounded-circle */
-		#sideNav .sidebar-photo img.img-profile,
-		.navbar #sideNav .img-profile,
-		#sideNav img.img-profile {
-		  border-radius: 4px !important;    /* final override */
+		/* Slightly smaller on medium screens */
+		@media (max-width: 992px) {
+		  #sideNav .img-profile {
+		    width: 130px !important;
+		    height: 130px !important;
+		  }
 		}
 		
-		/* Caption styling (smaller font) */
-		#sideNav .photo-caption {
-		  font-size: 0.70rem !important;    /* small caption */
-		  color: #f0f0f0;
-		  margin-top: 4px;
-		  text-align: center;
-		  opacity: 0.9;
+		/* Small mobile: keep it compact */
+		@media (max-width: 576px) {
+		  #sideNav .img-profile {
+		    width: 90px !important;
+		    height: 90px !important;
+		  }
 		}
 		
-		/* Container */
-		#sideNav .sidebar-photo {
-		  width: 180px;                     /* same as image width */
-		  margin: 0 auto;
-		  text-align: center;
+		/* If you want a visible border around the photo */
+		#sideNav .img-profile {
+		  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+		  border: 4px solid #fff; /* change color if needed */
 		}
+
 
 
 
